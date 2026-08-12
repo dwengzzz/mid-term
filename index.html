@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MIDTERM EXAMINATION :P</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Floating background flowers -->
+  <div class="flowers">
+    <span>🌸</span>
+    <span>🌷</span>
+    <span>🌸</span>
+    <span>🤍</span>
+    <span>🌷</span>
+    <span>🌸</span>
+    <span>🤍</span>
+    <span>🌷</span>
+  </div>
+
+  <main class="container">
+
+    <div class="card">
+
+      <div class="small-flower">🌸</div>
+
+      <h1 id="title">A Little Question 💗</h1>
+
+      <p id="subtitle">
+        Answer each question to continue.
+      </p>
+
+      <!-- QUESTION 1 -->
+      <div class="question active" id="question1">
+
+        <label for="name">
+          What's your first name?
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Type your answer..."
+          autocomplete="off"
+        >
+
+        <p class="error" id="error1"></p>
+
+        <button onclick="checkName()">
+          Proceed 💕
+        </button>
+
+      </div>
+
+
+      <!-- QUESTION 2 -->
+      <div class="question" id="question2">
+
+        <label for="manliligaw">
+          What's your manliligaw's name?
+        </label>
+
+        <input
+          type="text"
+          id="manliligaw"
+          placeholder="Type his name..."
+          autocomplete="off"
+        >
+
+        <p class="error" id="error2"></p>
+
+        <button onclick="checkManliligaw()">
+          Proceed 💕
+        </button>
+
+      </div>
+
+
+      <!-- QUESTION 3 -->
+      <div class="question" id="question3">
+
+        <label for="confess">
+          When did he confess?
+        </label>
+
+        <input
+          type="date"
+          id="confess"
+        >
+
+        <p class="date-hint">
+          Choose the date 💗
+        </p>
+
+        <p class="error" id="error3"></p>
+
+        <button onclick="checkDate()">
+          Proceed 💕
+        </button>
+
+      </div>
+
+
+      <!-- QUESTION 4 -->
+      <div class="question" id="question4">
+
+        <label for="flower">
+          What's your favorite flower?
+        </label>
+
+        <input
+          type="text"
+          id="flower"
+          placeholder="Type your answer..."
+          autocomplete="off"
+        >
+
+        <p class="error" id="error4"></p>
+
+        <button onclick="checkFlower()">
+          Finish 🌷
+        </button>
+
+      </div>
+
+
+      <!-- FINAL SCREEN -->
+      <div class="final-screen" id="finalScreen">
+
+        <div class="bouquet">
+          <div class="flower flower1">🌸</div>
+          <div class="flower flower2">🌷</div>
+          <div class="flower flower3">🌸</div>
+          <div class="flower flower4">🤍</div>
+          <div class="flower flower5">🌷</div>
+          <div class="flower flower6">🌸</div>
+        </div>
+
+        <h2>Thank you, Ericka! 💗</h2>
+
+        <p>
+          You got everything right. 🌸
+        </p>
+
+        <p class="final-message">
+          Someone prepared a little something<br>
+          just for you. 🤍
+        </p>
+
+        <div class="heart">♡</div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
