@@ -2,15 +2,17 @@
    ANSWERS
 ========================================= */
 
-// ANSWERS MUST BE IN CAPITAL LETTERS
+// ALL TEXT ANSWERS ARE AUTOMATICALLY
+// CONVERTED TO CAPITAL LETTERS.
 
 const CORRECT_NAME = "ERICKA";
 
 const CORRECT_MANLILIGAW = "DWYANE";
 
+// February 26, 2026
 const CORRECT_DATE = "2026-02-26";
 
-// Both answers are accepted
+// Accept BOTH singular and plural
 const CORRECT_FLOWERS = [
   "CARNATION",
   "CARNATIONS"
@@ -24,19 +26,25 @@ const CORRECT_FLOWERS = [
 function showQuestion(number) {
 
   // Hide all questions
-  document.querySelectorAll(".question").forEach(question => {
+  const questions = document.querySelectorAll(".question");
+
+  questions.forEach(function(question) {
     question.classList.remove("active");
   });
 
-  // Show selected question
-  document
-    .getElementById("question" + number)
-    .classList.add("active");
+  // Show the requested question
+  const nextQuestion =
+    document.getElementById("question" + number);
+
+  if (nextQuestion) {
+    nextQuestion.classList.add("active");
+  }
 }
 
 
 /* =========================================
    QUESTION 1
+   FIRST NAME
 ========================================= */
 
 function checkName() {
@@ -47,7 +55,8 @@ function checkName() {
     .trim()
     .toUpperCase();
 
-  const error = document.getElementById("error1");
+  const error =
+    document.getElementById("error1");
 
   if (input === CORRECT_NAME) {
 
@@ -66,6 +75,7 @@ function checkName() {
 
 /* =========================================
    QUESTION 2
+   MANLILIGAW'S NAME
 ========================================= */
 
 function checkManliligaw() {
@@ -76,7 +86,8 @@ function checkManliligaw() {
     .trim()
     .toUpperCase();
 
-  const error = document.getElementById("error2");
+  const error =
+    document.getElementById("error2");
 
   if (input === CORRECT_MANLILIGAW) {
 
@@ -94,7 +105,8 @@ function checkManliligaw() {
 
 
 /* =========================================
-   QUESTION 3 — DATE
+   QUESTION 3
+   CONFESSION DATE
 ========================================= */
 
 function checkDate() {
@@ -121,7 +133,8 @@ function checkDate() {
 
 
 /* =========================================
-   QUESTION 4 — FLOWER
+   QUESTION 4
+   FAVORITE FLOWER
 ========================================= */
 
 function checkFlower() {
@@ -135,7 +148,11 @@ function checkFlower() {
   const error =
     document.getElementById("error4");
 
-  // Accept CARNATION or CARNATIONS
+
+  // Accept:
+  // CARNATION
+  // CARNATIONS
+
   if (CORRECT_FLOWERS.includes(input)) {
 
     error.textContent = "";
@@ -152,30 +169,21 @@ function checkFlower() {
 
 
 /* =========================================
-   FINAL SCREEN
+   FINISH
+   REDIRECT TO FLOWER PAGE
 ========================================= */
 
 function showFinalScreen() {
 
-  // Hide the question
-  document
-    .getElementById("question4")
-    .classList.remove("active");
+  /*
+    When she gets the final answer correct
+    and clicks "Finish 🌷",
 
-  // Hide subtitle
-  document
-    .getElementById("subtitle")
-    .style.display = "none";
+    she will automatically be redirected
+    to flowers.html
+  */
 
-  // Change title
-  document
-    .getElementById("title")
-    .textContent = "You made it! 💗";
-
-  // Show final screen
-  document
-    .getElementById("finalScreen")
-    .classList.add("show");
+  window.location.href = "flowers.html";
 
 }
 
@@ -184,28 +192,116 @@ function showFinalScreen() {
    FORCE UPPERCASE WHILE TYPING
 ========================================= */
 
-document
-  .getElementById("name")
-  .addEventListener("input", function () {
+// FIRST NAME
 
-    this.value = this.value.toUpperCase();
+const nameInput =
+  document.getElementById("name");
 
-  });
+if (nameInput) {
+
+  nameInput.addEventListener(
+    "input",
+    function() {
+
+      this.value =
+        this.value.toUpperCase();
+
+    }
+  );
+
+}
 
 
-document
-  .getElementById("manliligaw")
-  .addEventListener("input", function () {
+// MANLILIGAW'S NAME
 
-    this.value = this.value.toUpperCase();
+const manliligawInput =
+  document.getElementById("manliligaw");
 
-  });
+if (manliligawInput) {
+
+  manliligawInput.addEventListener(
+    "input",
+    function() {
+
+      this.value =
+        this.value.toUpperCase();
+
+    }
+  );
+
+}
 
 
-document
-  .getElementById("flower")
-  .addEventListener("input", function () {
+// FAVORITE FLOWER
 
-    this.value = this.value.toUpperCase();
+const flowerInput =
+  document.getElementById("flower");
 
-  });
+if (flowerInput) {
+
+  flowerInput.addEventListener(
+    "input",
+    function() {
+
+      this.value =
+        this.value.toUpperCase();
+
+    }
+  );
+
+}
+
+
+/* =========================================
+   ENTER KEY SUPPORT
+========================================= */
+
+// If she presses ENTER instead of clicking
+// the button, the question will also proceed.
+
+if (nameInput) {
+
+  nameInput.addEventListener(
+    "keydown",
+    function(event) {
+
+      if (event.key === "Enter") {
+        checkName();
+      }
+
+    }
+  );
+
+}
+
+
+if (manliligawInput) {
+
+  manliligawInput.addEventListener(
+    "keydown",
+    function(event) {
+
+      if (event.key === "Enter") {
+        checkManliligaw();
+      }
+
+    }
+  );
+
+}
+
+
+if (flowerInput) {
+
+  flowerInput.addEventListener(
+    "keydown",
+    function(event) {
+
+      if (event.key === "Enter") {
+        checkFlower();
+      }
+
+    }
+  );
+
+}
