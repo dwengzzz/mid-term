@@ -1,0 +1,525 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+
+  background:
+    radial-gradient(circle at top left, #fff5fa, transparent 40%),
+    radial-gradient(circle at bottom right, #ffe8f2, transparent 45%),
+    #fff9fc;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  color: #70495b;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  position: relative;
+  z-index: 5;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  width: 100%;
+  min-height: 500px;
+
+  padding: 45px 30px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border-radius: 30px;
+
+  border: 2px solid #ffd9e8;
+
+  box-shadow:
+    0 20px 60px rgba(190, 110, 145, 0.15),
+    0 5px 20px rgba(190, 110, 145, 0.08);
+
+  text-align: center;
+
+  position: relative;
+
+  animation: cardAppear 0.8s ease;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.small-flower {
+  font-size: 45px;
+  margin-bottom: 10px;
+
+  animation: flowerFloat 3s ease-in-out infinite;
+}
+
+@keyframes flowerFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(4deg);
+  }
+}
+
+h1 {
+  font-size: 28px;
+  color: #c96d91;
+  margin-bottom: 10px;
+}
+
+#subtitle {
+  font-size: 14px;
+  color: #a47a8b;
+  margin-bottom: 35px;
+}
+
+
+/* =========================
+   QUESTIONS
+========================= */
+
+.question {
+  display: none;
+
+  animation: questionAppear 0.5s ease;
+}
+
+.question.active {
+  display: block;
+}
+
+@keyframes questionAppear {
+  from {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+label {
+  display: block;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  color: #7e5366;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+input {
+  width: 100%;
+
+  padding: 16px 18px;
+
+  border: 2px solid #f3c5d7;
+  border-radius: 15px;
+
+  outline: none;
+
+  background: #fffafd;
+
+  color: #6d4255;
+
+  font-size: 16px;
+
+  text-align: center;
+
+  transition: 0.25s ease;
+}
+
+input:focus {
+  border-color: #dc8eae;
+
+  box-shadow:
+    0 0 0 4px rgba(236, 156, 186, 0.15);
+}
+
+
+/* Make typed answers appear uppercase */
+#name,
+#manliligaw,
+#flower {
+  text-transform: uppercase;
+}
+
+
+/* Date input */
+input[type="date"] {
+  color: #70495b;
+  cursor: pointer;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+  width: 100%;
+
+  margin-top: 22px;
+
+  padding: 15px;
+
+  border: none;
+  border-radius: 15px;
+
+  background: linear-gradient(
+    135deg,
+    #e995b5,
+    #d9799e
+  );
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(214, 121, 158, 0.25);
+
+  transition: 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 25px rgba(214, 121, 158, 0.35);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error {
+  min-height: 20px;
+
+  margin-top: 10px;
+
+  color: #d45f7e;
+
+  font-size: 13px;
+}
+
+.date-hint {
+  margin-top: 8px;
+
+  font-size: 12px;
+
+  color: #b18a99;
+}
+
+
+/* =========================
+   FINAL SCREEN
+========================= */
+
+.final-screen {
+  display: none;
+
+  animation: finalAppear 1s ease;
+
+  position: relative;
+}
+
+.final-screen.show {
+  display: block;
+}
+
+@keyframes finalAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.final-screen h2 {
+  color: #d47498;
+
+  font-size: 27px;
+
+  margin-top: 20px;
+}
+
+.final-screen p {
+  margin-top: 10px;
+
+  color: #9b7181;
+}
+
+.final-message {
+  line-height: 1.7;
+}
+
+
+/* =========================
+   BOUQUET
+========================= */
+
+.bouquet {
+  height: 150px;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.flower {
+  position: absolute;
+
+  font-size: 55px;
+
+  filter: drop-shadow(
+    0 5px 8px rgba(200, 120, 150, 0.15)
+  );
+
+  animation: flowerDance 3s ease-in-out infinite;
+}
+
+.flower1 {
+  transform: translate(-85px, -10px) rotate(-15deg);
+  animation-delay: 0s;
+}
+
+.flower2 {
+  transform: translate(-42px, 15px) rotate(-5deg);
+  animation-delay: 0.3s;
+}
+
+.flower3 {
+  transform: translate(0, -25px);
+  animation-delay: 0.6s;
+}
+
+.flower4 {
+  transform: translate(42px, 15px) rotate(8deg);
+  animation-delay: 0.9s;
+}
+
+.flower5 {
+  transform: translate(85px, -5px) rotate(15deg);
+  animation-delay: 1.2s;
+}
+
+.flower6 {
+  transform: translate(0, 35px);
+  font-size: 40px;
+  animation-delay: 1.5s;
+}
+
+@keyframes flowerDance {
+  0%, 100% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -12px;
+  }
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.heart {
+  margin-top: 25px;
+
+  font-size: 50px;
+
+  color: #e38cab;
+
+  animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+
+/* =========================
+   BACKGROUND FLOWERS
+========================= */
+
+.flowers span {
+  position: absolute;
+
+  font-size: 25px;
+
+  opacity: 0.55;
+
+  animation: floatAround 8s ease-in-out infinite;
+}
+
+.flowers span:nth-child(1) {
+  left: 5%;
+  top: 10%;
+}
+
+.flowers span:nth-child(2) {
+  left: 15%;
+  bottom: 12%;
+  animation-delay: 1s;
+}
+
+.flowers span:nth-child(3) {
+  right: 8%;
+  top: 18%;
+  animation-delay: 2s;
+}
+
+.flowers span:nth-child(4) {
+  right: 18%;
+  bottom: 15%;
+  animation-delay: 3s;
+}
+
+.flowers span:nth-child(5) {
+  left: 30%;
+  top: 5%;
+  animation-delay: 4s;
+}
+
+.flowers span:nth-child(6) {
+  right: 35%;
+  bottom: 5%;
+  animation-delay: 5s;
+}
+
+.flowers span:nth-child(7) {
+  left: 3%;
+  top: 50%;
+  animation-delay: 2s;
+}
+
+.flowers span:nth-child(8) {
+  right: 4%;
+  top: 55%;
+  animation-delay: 4s;
+}
+
+@keyframes floatAround {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(15deg);
+  }
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 600px) {
+
+  .container {
+    padding: 15px;
+  }
+
+  .card {
+    min-height: 480px;
+
+    padding: 35px 22px;
+
+    border-radius: 25px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  label {
+    font-size: 18px;
+  }
+
+  .flower {
+    font-size: 45px;
+  }
+
+  .flower1 {
+    transform: translate(-65px, -10px);
+  }
+
+  .flower2 {
+    transform: translate(-32px, 15px);
+  }
+
+  .flower4 {
+    transform: translate(32px, 15px);
+  }
+
+  .flower5 {
+    transform: translate(65px, -5px);
+  }
+                       }
