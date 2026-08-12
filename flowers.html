@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>For Ericka 🌸</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    body {
+      min-height: 100vh;
+
+      overflow: hidden;
+
+      font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          #ffffff 0%,
+          #fff5fa 35%,
+          #ffe6f1 70%,
+          #fff9fc 100%
+        );
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      position: relative;
+    }
+
+
+    /* =========================
+       MAIN MESSAGE
+    ========================= */
+
+    .message {
+
+      position: relative;
+
+      z-index: 20;
+
+      text-align: center;
+
+      padding: 30px;
+
+      animation:
+        messageAppear 2s ease forwards;
+
+    }
+
+
+    @keyframes messageAppear {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(30px)
+          scale(.9);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+
+      }
+
+    }
+
+
+    h1 {
+
+      color: #d8799e;
+
+      font-size: clamp(
+        30px,
+        7vw,
+        50px
+      );
+
+      margin-bottom: 15px;
+
+      text-shadow:
+        0 5px 15px
+        rgba(210, 120, 155, .2);
+
+    }
+
+
+    .subtitle {
+
+      color: #a47788;
+
+      font-size: 17px;
+
+      line-height: 1.7;
+
+    }
+
+
+    .heart {
+
+      display: block;
+
+      margin-top: 18px;
+
+      font-size: 45px;
+
+      color: #e28bab;
+
+      animation:
+        heartbeat 1.5s
+        ease-in-out
+        infinite;
+
+    }
+
+
+    @keyframes heartbeat {
+
+      0%,
+      100% {
+
+        transform:
+          scale(1);
+
+      }
+
+      50% {
+
+        transform:
+          scale(1.2);
+
+      }
+
+    }
+
+
+    /* =========================
+       FLOWERS
+    ========================= */
+
+    .flower {
+
+      position: absolute;
+
+      font-size: 65px;
+
+      z-index: 5;
+
+      user-select: none;
+
+      animation:
+        flowerFloat
+        4s
+        ease-in-out
+        infinite;
+
+    }
+
+
+    @keyframes flowerFloat {
+
+      0%,
+      100% {
+
+        transform:
+          translateY(0)
+          rotate(-5deg);
+
+      }
+
+      50% {
+
+        transform:
+          translateY(-25px)
+          rotate(5deg);
+
+      }
+
+    }
+
+
+    .flower1 {
+
+      left: 7%;
+
+      top: 15%;
+
+      animation-delay: 0s;
+
+    }
+
+
+    .flower2 {
+
+      left: 20%;
+
+      bottom: 12%;
+
+      animation-delay: .7s;
+
+    }
+
+
+    .flower3 {
+
+      left: 42%;
+
+      top: 8%;
+
+      animation-delay: 1.2s;
+
+    }
+
+
+    .flower4 {
+
+      right: 15%;
+
+      top: 17%;
+
+      animation-delay: 1.8s;
+
+    }
+
+
+    .flower5 {
+
+      right: 6%;
+
+      bottom: 13%;
+
+      animation-delay: 2.4s;
+
+    }
+
+
+    .flower6 {
+
+      left: 50%;
+
+      bottom: 5%;
+
+      animation-delay: 3s;
+
+    }
+
+
+    /* =========================
+       FALLING PETALS
+    ========================= */
+
+    .petal {
+
+      position: absolute;
+
+      top: -60px;
+
+      z-index: 10;
+
+      font-size: 25px;
+
+      user-select: none;
+
+      animation:
+        fall linear infinite;
+
+    }
+
+
+    @keyframes fall {
+
+      0% {
+
+        transform:
+          translateY(-60px)
+          rotate(0deg);
+
+        opacity: 0;
+
+      }
+
+      10% {
+
+        opacity: .8;
+
+      }
+
+      90% {
+
+        opacity: .8;
+
+      }
+
+      100% {
+
+        transform:
+          translateY(110vh)
+          rotate(360deg);
+
+        opacity: 0;
+
+      }
+
+    }
+
+
+    .petal1 {
+
+      left: 5%;
+
+      animation-duration: 7s;
+
+    }
+
+
+    .petal2 {
+
+      left: 17%;
+
+      animation-duration: 9s;
+
+      animation-delay: 2s;
+
+    }
+
+
+    .petal3 {
+
+      left: 30%;
+
+      animation-duration: 8s;
+
+      animation-delay: 1s;
+
+    }
+
+
+    .petal4 {
+
+      left: 48%;
+
+      animation-duration: 10s;
+
+      animation-delay: 3s;
+
+    }
+
+
+    .petal5 {
+
+      left: 65%;
+
+      animation-duration: 7s;
+
+      animation-delay: 1.5s;
+
+    }
+
+
+    .petal6 {
+
+      left: 80%;
+
+      animation-duration: 9s;
+
+      animation-delay: 4s;
+
+    }
+
+
+    .petal7 {
+
+      left: 93%;
+
+      animation-duration: 8s;
+
+      animation-delay: 2.5s;
+
+    }
+
+
+    /* =========================
+       GLOWING LIGHTS
+    ========================= */
+
+    .glow {
+
+      position: absolute;
+
+      width: 180px;
+
+      height: 180px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255, 190, 215, .25);
+
+      filter:
+        blur(40px);
+
+      animation:
+        glowMove
+        6s
+        ease-in-out
+        infinite;
+
+    }
+
+
+    .glow1 {
+
+      left: -60px;
+
+      top: 10%;
+
+    }
+
+
+    .glow2 {
+
+      right: -60px;
+
+      bottom: 10%;
+
+      animation-delay: 3s;
+
+    }
+
+
+    @keyframes glowMove {
+
+      0%,
+      100% {
+
+        transform:
+          scale(1);
+
+      }
+
+      50% {
+
+        transform:
+          scale(1.4);
+
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .flower {
+
+        font-size: 48px;
+
+      }
+
+      .petal {
+
+        font-size: 20px;
+
+      }
+
+      .subtitle {
+
+        font-size: 15px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- SOFT GLOW -->
+
+  <div class="glow glow1"></div>
+
+  <div class="glow glow2"></div>
+
+
+  <!-- FLOATING FLOWERS -->
+
+  <div class="flower flower1">
+    🌸
+  </div>
+
+  <div class="flower flower2">
+    🌷
+  </div>
+
+  <div class="flower flower3">
+    🌸
+  </div>
+
+  <div class="flower flower4">
+    🤍
+  </div>
+
+  <div class="flower flower5">
+    🌷
+  </div>
+
+  <div class="flower flower6">
+    🌸
+  </div>
+
+
+  <!-- FALLING PETALS -->
+
+  <div class="petal petal1">
+    🌸
+  </div>
+
+  <div class="petal petal2">
+    🤍
+  </div>
+
+  <div class="petal petal3">
+    🌷
+  </div>
+
+  <div class="petal petal4">
+    🌸
+  </div>
+
+  <div class="petal petal5">
+    🤍
+  </div>
+
+  <div class="petal petal6">
+    🌷
+  </div>
+
+  <div class="petal petal7">
+    🌸
+  </div>
+
+
+  <!-- CENTER MESSAGE -->
+
+  <div class="message">
+
+    <h1>
+      For You, Ericka 🌸
+    </h1>
+
+    <p class="subtitle">
+      A little garden made just for you. 🤍
+    </p>
+
+    <span class="heart">
+      ♡
+    </span>
+
+  </div>
+
+
+</body>
+
+</html>
