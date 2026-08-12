@@ -5,13 +5,9 @@
 
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>For my pretty Ericka 🤍</title>
-
+  <title>Congratulations, Ericka! 🌸</title>
 
   <style>
 
@@ -21,15 +17,13 @@
       padding: 0;
     }
 
-
-    /* =====================================
-       PAGE
-    ===================================== */
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
 
     body {
-
-      width: 100%;
-      min-height: 100vh;
 
       overflow: hidden;
 
@@ -41,21 +35,20 @@
         sans-serif;
 
       background:
-
         radial-gradient(
-          circle at 50% 50%,
+          circle at center,
           #ffffff 0%,
           #fff7fb 35%,
           #ffeaf3 70%,
-          #ffdce9 100%
+          #ffd9e8 100%
         );
 
     }
 
 
-    /* =====================================
-       SOFT GLOW
-    ===================================== */
+    /* =================================
+       SOFT BACKGROUND GLOW
+    ================================= */
 
     .glow {
 
@@ -67,406 +60,848 @@
       border-radius: 50%;
 
       background:
-        rgba(255, 180, 210, 0.25);
+        rgba(255, 160, 200, 0.22);
 
-      filter:
-        blur(70px);
+      filter: blur(70px);
+
+      animation:
+        glow 6s ease-in-out infinite;
 
       pointer-events: none;
 
-      animation:
-        glowMove 8s ease-in-out infinite;
-
     }
-
 
     .glow1 {
-
       left: -100px;
-      top: -80px;
-
+      top: -100px;
     }
 
-
     .glow2 {
-
       right: -100px;
       bottom: -100px;
 
       animation-delay: 3s;
-
     }
 
-
-    .glow3 {
-
-      left: 40%;
-      top: 35%;
-
-      width: 220px;
-      height: 220px;
-
-      animation-delay: 5s;
-
-    }
-
-
-    @keyframes glowMove {
+    @keyframes glow {
 
       0%,
       100% {
-
-        transform:
-          scale(1);
-
-        opacity: .7;
-
+        transform: scale(1);
       }
 
       50% {
+        transform: scale(1.4);
+      }
+
+    }
+
+
+    /* =================================
+       CENTER MESSAGE
+    ================================= */
+
+    .message {
+
+      position: absolute;
+
+      z-index: 100;
+
+      top: 50%;
+      left: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      width: min(88%, 600px);
+
+      padding: 35px 25px;
+
+      text-align: center;
+
+      border-radius: 30px;
+
+      background:
+        rgba(255, 255, 255, 0.88);
+
+      border:
+        2px solid
+        rgba(255, 190, 215, 0.8);
+
+      box-shadow:
+        0 20px 60px
+        rgba(190, 100, 140, 0.18);
+
+      backdrop-filter:
+        blur(10px);
+
+      animation:
+        appear 1.5s ease forwards;
+
+    }
+
+
+    @keyframes appear {
+
+      from {
+
+        opacity: 0;
 
         transform:
-          scale(1.35);
+          translate(-50%, -50%)
+          scale(.7);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translate(-50%, -50%)
+          scale(1);
+
+      }
+
+    }
+
+
+    .message h1 {
+
+      color: #d66f99;
+
+      font-size:
+        clamp(27px, 7vw, 48px);
+
+      line-height: 1.2;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .message p {
+
+      color: #8f6878;
+
+      font-size:
+        clamp(15px, 4vw, 19px);
+
+      line-height: 1.7;
+
+    }
+
+
+    .main-heart {
+
+      display: block;
+
+      margin-top: 20px;
+
+      font-size: 50px;
+
+      color: #e77da7;
+
+      animation:
+        heartbeat 1.4s ease-in-out infinite;
+
+    }
+
+
+    @keyframes heartbeat {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+    }
+
+
+    /* =================================
+       FALLING OBJECTS
+    ================================= */
+
+    .falling {
+
+      position: absolute;
+
+      top: -80px;
+
+      z-index: 10;
+
+      pointer-events: none;
+
+      user-select: none;
+
+      animation:
+        fall var(--duration)
+        linear infinite;
+
+      animation-delay:
+        var(--delay);
+
+    }
+
+
+    @keyframes fall {
+
+      0% {
+
+        transform:
+          translateY(-80px)
+          translateX(0)
+          rotate(0deg)
+          scale(var(--size));
+
+        opacity: 0;
+
+      }
+
+      8% {
 
         opacity: 1;
 
       }
 
-    }
-
-
-    /* =====================================
-       FLOWER FIELD
-    ===================================== */
-
-    .garden {
-
-      position: absolute;
-
-      inset: 0;
-
-      width: 100%;
-      height: 100%;
-
-      pointer-events: none;
-
-    }
-
-
-    /* =====================================
-       FLOWERS
-    ===================================== */
-
-    .flower {
-
-      position: absolute;
-
-      user-select: none;
-
-      font-size: 45px;
-
-      z-index: 3;
-
-      animation:
-        flowerFloat
-        var(--speed)
-        ease-in-out
-        infinite;
-
-      animation-delay:
-        var(--delay);
-
-      transform-origin:
-        center bottom;
-
-    }
-
-
-    @keyframes flowerFloat {
-
-      0%,
-      100% {
+      25% {
 
         transform:
-          translateY(0)
-          rotate(-5deg)
-          scale(1);
+          translateY(25vh)
+          translateX(30px)
+          rotate(90deg)
+          scale(var(--size));
 
       }
 
       50% {
 
         transform:
-          translateY(-15px)
-          rotate(5deg)
-          scale(1.05);
+          translateY(50vh)
+          translateX(-35px)
+          rotate(180deg)
+          scale(var(--size));
+
+      }
+
+      75% {
+
+        transform:
+          translateY(75vh)
+          translateX(35px)
+          rotate(270deg)
+          scale(var(--size));
+
+      }
+
+      92% {
+
+        opacity: 1;
+
+      }
+
+      100% {
+
+        transform:
+          translateY(115vh)
+          translateX(-20px)
+          rotate(360deg)
+          scale(var(--size));
+
+        opacity: 0;
 
       }
 
     }
 
 
-    /* =====================================
-       FLOWER POSITIONS
-    ===================================== */
+    /* =================================
+       PINK FLOWERS
+    ================================= */
 
-    .f1 {
-      left: 2%;
-      top: 5%;
-      --speed: 4s;
-      --delay: 0s;
-      font-size: 42px;
+    .pink-flower {
+
+      color: #ed79aa;
+
+      filter:
+        drop-shadow(
+          0 3px 5px
+          rgba(220, 100, 150, .15)
+        );
+
     }
 
-    .f2 {
-      left: 9%;
-      top: 17%;
-      --speed: 5s;
-      --delay: 1s;
+
+    /* =================================
+       WHITE FLOWERS
+    ================================= */
+
+    .white-flower {
+
+      color: #ffffff;
+
+      filter:
+        drop-shadow(
+          0 2px 5px
+          rgba(160, 120, 140, .25)
+        );
+
+    }
+
+
+    /* =================================
+       HEARTS
+    ================================= */
+
+    .pink-heart {
+
+      color: #ed78a7;
+
+      text-shadow:
+        0 2px 8px
+        rgba(230, 100, 150, .25);
+
+    }
+
+
+    .white-heart {
+
+      color: #ffffff;
+
+      text-shadow:
+        0 2px 8px
+        rgba(150, 120, 140, .3);
+
+    }
+
+
+    /* =================================
+       DIFFERENT SIZES
+    ================================= */
+
+    .small {
+      font-size: 20px;
+    }
+
+    .medium {
+      font-size: 32px;
+    }
+
+    .large {
+      font-size: 45px;
+    }
+
+    .huge {
       font-size: 58px;
     }
 
-    .f3 {
+
+    /* =================================
+       MOBILE
+    ================================= */
+
+    @media (max-width: 600px) {
+
+      .message {
+
+        width: 82%;
+
+        padding:
+          28px 18px;
+
+      }
+
+      .message h1 {
+
+        font-size: 28px;
+
+      }
+
+      .message p {
+
+        font-size: 15px;
+
+      }
+
+      .main-heart {
+
+        font-size: 42px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =================================
+       BACKGROUND GLOW
+  ================================= -->
+
+  <div class="glow glow1"></div>
+
+  <div class="glow glow2"></div>
+
+
+  <!-- =================================
+       CENTER MESSAGE
+  ================================= -->
+
+  <div class="message">
+
+    <h1>
+      Congratulations! 🌸
+    </h1>
+
+    <p>
+
+      You passed the test! 🎉
+
+      <br><br>
+
+      As your reward, here are some flowers,
+
+      <br>
+
+      and lots of hugs and kisses from me. 💗
+
+    </p>
+
+    <span class="main-heart">
+      ♡
+    </span>
+
+  </div>
+
+
+  <!-- =================================
+       FALLING FLOWERS
+  ================================= -->
+
+  <div
+    class="falling pink-flower huge"
+    style="
+      left: 3%;
+      --duration: 6s;
+      --delay: 0s;
+      --size: 1;
+    "
+  >
+    🌸
+  </div>
+
+
+  <div
+    class="falling white-flower medium"
+    style="
+      left: 10%;
+      --duration: 8s;
+      --delay: 2s;
+      --size: 1;
+    "
+  >
+    ❀
+  </div>
+
+
+  <div
+    class="falling pink-flower large"
+    style="
       left: 18%;
-      top: 6%;
-      --speed: 4.5s;
-      --delay: 2s;
-      font-size: 38px;
-    }
+      --duration: 7s;
+      --delay: 4s;
+      --size: 1;
+    "
+  >
+    🌸
+  </div>
 
-    .f4 {
+
+  <div
+    class="falling white-flower huge"
+    style="
       left: 27%;
-      top: 19%;
-      --speed: 5.5s;
-      --delay: .5s;
-      font-size: 48px;
-    }
-
-    .f5 {
-      left: 36%;
-      top: 4%;
-      --speed: 4s;
-      --delay: 1.5s;
-      font-size: 35px;
-    }
-
-    .f6 {
-      left: 46%;
-      top: 14%;
-      --speed: 6s;
-      --delay: 2.5s;
-      font-size: 55px;
-    }
-
-    .f7 {
-      left: 56%;
-      top: 3%;
-      --speed: 4.5s;
-      --delay: .7s;
-      font-size: 40px;
-    }
-
-    .f8 {
-      left: 66%;
-      top: 18%;
-      --speed: 5s;
-      --delay: 1.8s;
-      font-size: 60px;
-    }
-
-    .f9 {
-      left: 76%;
-      top: 7%;
-      --speed: 4s;
-      --delay: 2.2s;
-      font-size: 40px;
-    }
-
-    .f10 {
-      left: 87%;
-      top: 20%;
-      --speed: 5.5s;
-      --delay: .3s;
-      font-size: 55px;
-    }
-
-
-    .f11 {
-      left: 1%;
-      top: 33%;
-      --speed: 5s;
+      --duration: 9s;
       --delay: 1s;
-      font-size: 50px;
-    }
-
-    .f12 {
-      left: 11%;
-      top: 40%;
-      --speed: 4.5s;
-      --delay: 2s;
-      font-size: 35px;
-    }
-
-    .f13 {
-      left: 20%;
-      top: 29%;
-      --speed: 6s;
-      --delay: .5s;
-      font-size: 52px;
-    }
-
-    .f14 {
-      left: 30%;
-      top: 44%;
-      --speed: 4s;
-      --delay: 1.5s;
-      font-size: 42px;
-    }
-
-    .f15 {
-      left: 40%;
-      top: 30%;
-      --speed: 5.5s;
-      --delay: 2s;
-      font-size: 35px;
-    }
-
-    .f16 {
-      left: 51%;
-      top: 43%;
-      --speed: 4.5s;
-      --delay: .8s;
-      font-size: 48px;
-    }
-
-    .f17 {
-      left: 61%;
-      top: 29%;
-      --speed: 5s;
-      --delay: 1.8s;
-      font-size: 38px;
-    }
-
-    .f18 {
-      left: 71%;
-      top: 43%;
-      --speed: 6s;
-      --delay: .4s;
-      font-size: 55px;
-    }
-
-    .f19 {
-      left: 81%;
-      top: 32%;
-      --speed: 4s;
-      --delay: 2.5s;
-      font-size: 42px;
-    }
-
-    .f20 {
-      left: 92%;
-      top: 42%;
-      --speed: 5s;
-      --delay: 1s;
-      font-size: 50px;
-    }
+      --size: 1;
+    "
+  >
+    ❀
+  </div>
 
 
-    .f21 {
-      left: 5%;
-      top: 58%;
-      --speed: 5.5s;
-      --delay: .5s;
-      font-size: 55px;
-    }
-
-    .f22 {
-      left: 15%;
-      top: 68%;
-      --speed: 4s;
-      --delay: 1.5s;
-      font-size: 38px;
-    }
-
-    .f23 {
-      left: 25%;
-      top: 56%;
-      --speed: 6s;
-      --delay: 2s;
-      font-size: 50px;
-    }
-
-    .f24 {
+  <div
+    class="falling pink-flower medium"
+    style="
       left: 35%;
-      top: 70%;
-      --speed: 4.5s;
-      --delay: .3s;
-      font-size: 42px;
-    }
-
-    .f25 {
-      left: 45%;
-      top: 58%;
-      --speed: 5s;
-      --delay: 1.8s;
-      font-size: 55px;
-    }
-
-    .f26 {
-      left: 56%;
-      top: 72%;
-      --speed: 4s;
-      --delay: 2.3s;
-      font-size: 38px;
-    }
-
-    .f27 {
-      left: 66%;
-      top: 56%;
-      --speed: 5.5s;
-      --delay: .7s;
-      font-size: 52px;
-    }
-
-    .f28 {
-      left: 76%;
-      top: 70%;
-      --speed: 4.5s;
-      --delay: 1.2s;
-      font-size: 42px;
-    }
-
-    .f29 {
-      left: 87%;
-      top: 57%;
-      --speed: 6s;
-      --delay: 2s;
-      font-size: 55px;
-    }
-
-    .f30 {
-      left: 95%;
-      top: 72%;
-      --speed: 4s;
-      --delay: .5s;
-      font-size: 38px;
-    }
+      --duration: 6.5s;
+      --delay: 3s;
+      --size: 1;
+    "
+  >
+    🌷
+  </div>
 
 
-    /* =====================================
-       BOTTOM FLOWERS
-    ===================================== */
+  <div
+    class="falling white-flower large"
+    style="
+      left: 43%;
+      --duration: 8s;
+      --delay: 5s;
+      --size: 1;
+    "
+  >
+    ❀
+  </div>
 
-    .f31 {
-      left: 1%;
-      bottom: 3%;
-      --speed: 5s;
+
+  <div
+    class="falling pink-flower huge"
+    style="
+      left: 52%;
+      --duration: 7s;
+      --delay: 1.5s;
+      --size: 1;
+    "
+  >
+    🌸
+  </div>
+
+
+  <div
+    class="falling white-flower medium"
+    style="
+      left: 61%;
+      --duration: 9s;
+      --delay: 4s;
+      --size: 1;
+    "
+  >
+    ❀
+  </div>
+
+
+  <div
+    class="falling pink-flower large"
+    style="
+      left: 70%;
+      --duration: 6s;
+      --delay: 2.5s;
+      --size: 1;
+    "
+  >
+    🌷
+  </div>
+
+
+  <div
+    class="falling white-flower huge"
+    style="
+      left: 79%;
+      --duration: 8s;
+      --delay: 0.5s;
+      --size: 1;
+    "
+  >
+    ❀
+  </div>
+
+
+  <div
+    class="falling pink-flower medium"
+    style="
+      left: 88%;
+      --duration: 7s;
+      --delay: 3.5s;
+      --size: 1;
+    "
+  >
+    🌸
+  </div>
+
+
+  <div
+    class="falling white-flower large"
+    style="
+      left: 96%;
+      --duration: 9s;
       --delay: 1s;
-      font-size: 65px;
-    }
+      --size: 1;
+    "
+  >
+    ❀
+  </div>
 
-    .f32 {
-      left: 12%;
-      bottom: 1%;
-      --speed: 4s;
+
+  <!-- =================================
+       MORE FLOWERS
+  ================================= -->
+
+  <div
+    class="falling pink-flower small"
+    style="
+      left: 7%;
+      --duration: 5s;
+      --delay: 1s;
+      --size: 1;
+    "
+  >
+    🌸
+  </div>
+
+
+  <div
+    class="falling white-flower small"
+    style="
+      left: 23%;
+      --duration: 6s;
+      --delay: 3s;
+      --size: 1;
+    "
+  >
+    ❀
+  </div>
+
+
+  <div
+    class="falling pink-flower small"
+    style="
+      left: 47%;
+      --duration: 5.5s;
+      --delay: 0s;
+      --size: 1;
+    "
+  >
+    🌸
+  </div>
+
+
+  <div
+    class="falling white-flower small"
+    style="
+      left: 67%;
+      --duration: 6.5s;
       --delay: 2s;
+      --size: 1;
+    "
+  >
+    ❀
+  </div>
+
+
+  <div
+    class="falling pink-flower small"
+    style="
+      left: 83%;
+      --duration: 5.5s;
+      --delay: 4s;
+      --size: 1;
+    "
+  >
+    🌷
+  </div>
+
+
+  <!-- =================================
+       PINK HEARTS
+  ================================= -->
+
+  <div
+    class="falling pink-heart large"
+    style="
+      left: 5%;
+      --duration: 7s;
+      --delay: 1s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+  <div
+    class="falling pink-heart medium"
+    style="
+      left: 15%;
+      --duration: 8s;
+      --delay: 3s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+  <div
+    class="falling pink-heart huge"
+    style="
+      left: 29%;
+      --duration: 9s;
+      --delay: 0s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+  <div
+    class="falling pink-heart medium"
+    style="
+      left: 41%;
+      --duration: 6s;
+      --delay: 4s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+  <div
+    class="falling pink-heart large"
+    style="
+      left: 58%;
+      --duration: 8s;
+      --delay: 2s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+  <div
+    class="falling pink-heart huge"
+    style="
+      left: 73%;
+      --duration: 7s;
+      --delay: 5s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+  <div
+    class="falling pink-heart medium"
+    style="
+      left: 91%;
+      --duration: 8s;
+      --delay: 1.5s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+  <!-- =================================
+       WHITE HEARTS
+  ================================= -->
+
+  <div
+    class="falling white-heart medium"
+    style="
+      left: 9%;
+      --duration: 8s;
+      --delay: 4s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+  <div
+    class="falling white-heart large"
+    style="
+      left: 21%;
+      --duration: 7s;
+      --delay: 1s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+  <div
+    class="falling white-heart small"
+    style="
+      left: 34%;
+      --duration: 6s;
+      --delay: 3s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+  <div
+    class="falling white-heart large"
+    style="
+      left: 49%;
+      --duration: 9s;
+      --delay: 0s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+  <div
+    class="falling white-heart medium"
+    style="
+      left: 64%;
+      --duration: 7s;
+      --delay: 2.5s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+  <div
+    class="falling white-heart huge"
+    style="
+      left: 82%;
+      --duration: 8s;
+      --delay: 4.5s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+  <div
+    class="falling white-heart small"
+    style="
+      left: 96%;
+      --duration: 6s;
+      --delay: 2s;
+      --size: 1;
+    "
+  >
+    ♥
+  </div>
+
+
+</body>
+
+</html>
