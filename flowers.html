@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -9,7 +10,8 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>For Ericka 🌸</title>
+  <title>For my pretty Ericka 🤍</title>
+
 
   <style>
 
@@ -20,10 +22,18 @@
     }
 
 
+    /* =====================================
+       PAGE
+    ===================================== */
+
     body {
+
+      width: 100%;
       min-height: 100vh;
 
       overflow: hidden;
+
+      position: relative;
 
       font-family:
         "Trebuchet MS",
@@ -31,427 +41,72 @@
         sans-serif;
 
       background:
+
         radial-gradient(
-          circle at 50% 20%,
+          circle at 50% 50%,
           #ffffff 0%,
-          #fff5fa 35%,
-          #ffe6f1 70%,
-          #fff9fc 100%
+          #fff7fb 35%,
+          #ffeaf3 70%,
+          #ffdce9 100%
         );
 
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      position: relative;
     }
 
 
-    /* =========================
-       MAIN MESSAGE
-    ========================= */
-
-    .message {
-
-      position: relative;
-
-      z-index: 20;
-
-      text-align: center;
-
-      padding: 30px;
-
-      animation:
-        messageAppear 2s ease forwards;
-
-    }
-
-
-    @keyframes messageAppear {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(30px)
-          scale(.9);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0)
-          scale(1);
-
-      }
-
-    }
-
-
-    h1 {
-
-      color: #d8799e;
-
-      font-size: clamp(
-        30px,
-        7vw,
-        50px
-      );
-
-      margin-bottom: 15px;
-
-      text-shadow:
-        0 5px 15px
-        rgba(210, 120, 155, .2);
-
-    }
-
-
-    .subtitle {
-
-      color: #a47788;
-
-      font-size: 17px;
-
-      line-height: 1.7;
-
-    }
-
-
-    .heart {
-
-      display: block;
-
-      margin-top: 18px;
-
-      font-size: 45px;
-
-      color: #e28bab;
-
-      animation:
-        heartbeat 1.5s
-        ease-in-out
-        infinite;
-
-    }
-
-
-    @keyframes heartbeat {
-
-      0%,
-      100% {
-
-        transform:
-          scale(1);
-
-      }
-
-      50% {
-
-        transform:
-          scale(1.2);
-
-      }
-
-    }
-
-
-    /* =========================
-       FLOWERS
-    ========================= */
-
-    .flower {
-
-      position: absolute;
-
-      font-size: 65px;
-
-      z-index: 5;
-
-      user-select: none;
-
-      animation:
-        flowerFloat
-        4s
-        ease-in-out
-        infinite;
-
-    }
-
-
-    @keyframes flowerFloat {
-
-      0%,
-      100% {
-
-        transform:
-          translateY(0)
-          rotate(-5deg);
-
-      }
-
-      50% {
-
-        transform:
-          translateY(-25px)
-          rotate(5deg);
-
-      }
-
-    }
-
-
-    .flower1 {
-
-      left: 7%;
-
-      top: 15%;
-
-      animation-delay: 0s;
-
-    }
-
-
-    .flower2 {
-
-      left: 20%;
-
-      bottom: 12%;
-
-      animation-delay: .7s;
-
-    }
-
-
-    .flower3 {
-
-      left: 42%;
-
-      top: 8%;
-
-      animation-delay: 1.2s;
-
-    }
-
-
-    .flower4 {
-
-      right: 15%;
-
-      top: 17%;
-
-      animation-delay: 1.8s;
-
-    }
-
-
-    .flower5 {
-
-      right: 6%;
-
-      bottom: 13%;
-
-      animation-delay: 2.4s;
-
-    }
-
-
-    .flower6 {
-
-      left: 50%;
-
-      bottom: 5%;
-
-      animation-delay: 3s;
-
-    }
-
-
-    /* =========================
-       FALLING PETALS
-    ========================= */
-
-    .petal {
-
-      position: absolute;
-
-      top: -60px;
-
-      z-index: 10;
-
-      font-size: 25px;
-
-      user-select: none;
-
-      animation:
-        fall linear infinite;
-
-    }
-
-
-    @keyframes fall {
-
-      0% {
-
-        transform:
-          translateY(-60px)
-          rotate(0deg);
-
-        opacity: 0;
-
-      }
-
-      10% {
-
-        opacity: .8;
-
-      }
-
-      90% {
-
-        opacity: .8;
-
-      }
-
-      100% {
-
-        transform:
-          translateY(110vh)
-          rotate(360deg);
-
-        opacity: 0;
-
-      }
-
-    }
-
-
-    .petal1 {
-
-      left: 5%;
-
-      animation-duration: 7s;
-
-    }
-
-
-    .petal2 {
-
-      left: 17%;
-
-      animation-duration: 9s;
-
-      animation-delay: 2s;
-
-    }
-
-
-    .petal3 {
-
-      left: 30%;
-
-      animation-duration: 8s;
-
-      animation-delay: 1s;
-
-    }
-
-
-    .petal4 {
-
-      left: 48%;
-
-      animation-duration: 10s;
-
-      animation-delay: 3s;
-
-    }
-
-
-    .petal5 {
-
-      left: 65%;
-
-      animation-duration: 7s;
-
-      animation-delay: 1.5s;
-
-    }
-
-
-    .petal6 {
-
-      left: 80%;
-
-      animation-duration: 9s;
-
-      animation-delay: 4s;
-
-    }
-
-
-    .petal7 {
-
-      left: 93%;
-
-      animation-duration: 8s;
-
-      animation-delay: 2.5s;
-
-    }
-
-
-    /* =========================
-       GLOWING LIGHTS
-    ========================= */
+    /* =====================================
+       SOFT GLOW
+    ===================================== */
 
     .glow {
 
       position: absolute;
 
-      width: 180px;
-
-      height: 180px;
+      width: 300px;
+      height: 300px;
 
       border-radius: 50%;
 
       background:
-        rgba(255, 190, 215, .25);
+        rgba(255, 180, 210, 0.25);
 
       filter:
-        blur(40px);
+        blur(70px);
+
+      pointer-events: none;
 
       animation:
-        glowMove
-        6s
-        ease-in-out
-        infinite;
+        glowMove 8s ease-in-out infinite;
 
     }
 
 
     .glow1 {
 
-      left: -60px;
-
-      top: 10%;
+      left: -100px;
+      top: -80px;
 
     }
 
 
     .glow2 {
 
-      right: -60px;
-
-      bottom: 10%;
+      right: -100px;
+      bottom: -100px;
 
       animation-delay: 3s;
+
+    }
+
+
+    .glow3 {
+
+      left: 40%;
+      top: 35%;
+
+      width: 220px;
+      height: 220px;
+
+      animation-delay: 5s;
 
     }
 
@@ -464,136 +119,354 @@
         transform:
           scale(1);
 
+        opacity: .7;
+
       }
 
       50% {
 
         transform:
-          scale(1.4);
+          scale(1.35);
+
+        opacity: 1;
 
       }
 
     }
 
 
-    /* =========================
-       MOBILE
-    ========================= */
+    /* =====================================
+       FLOWER FIELD
+    ===================================== */
 
-    @media (max-width: 600px) {
+    .garden {
 
-      .flower {
+      position: absolute;
 
-        font-size: 48px;
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      pointer-events: none;
+
+    }
+
+
+    /* =====================================
+       FLOWERS
+    ===================================== */
+
+    .flower {
+
+      position: absolute;
+
+      user-select: none;
+
+      font-size: 45px;
+
+      z-index: 3;
+
+      animation:
+        flowerFloat
+        var(--speed)
+        ease-in-out
+        infinite;
+
+      animation-delay:
+        var(--delay);
+
+      transform-origin:
+        center bottom;
+
+    }
+
+
+    @keyframes flowerFloat {
+
+      0%,
+      100% {
+
+        transform:
+          translateY(0)
+          rotate(-5deg)
+          scale(1);
 
       }
 
-      .petal {
+      50% {
 
-        font-size: 20px;
-
-      }
-
-      .subtitle {
-
-        font-size: 15px;
+        transform:
+          translateY(-15px)
+          rotate(5deg)
+          scale(1.05);
 
       }
 
     }
 
-  </style>
 
-</head>
+    /* =====================================
+       FLOWER POSITIONS
+    ===================================== */
 
+    .f1 {
+      left: 2%;
+      top: 5%;
+      --speed: 4s;
+      --delay: 0s;
+      font-size: 42px;
+    }
 
-<body>
+    .f2 {
+      left: 9%;
+      top: 17%;
+      --speed: 5s;
+      --delay: 1s;
+      font-size: 58px;
+    }
 
+    .f3 {
+      left: 18%;
+      top: 6%;
+      --speed: 4.5s;
+      --delay: 2s;
+      font-size: 38px;
+    }
 
-  <!-- SOFT GLOW -->
+    .f4 {
+      left: 27%;
+      top: 19%;
+      --speed: 5.5s;
+      --delay: .5s;
+      font-size: 48px;
+    }
 
-  <div class="glow glow1"></div>
+    .f5 {
+      left: 36%;
+      top: 4%;
+      --speed: 4s;
+      --delay: 1.5s;
+      font-size: 35px;
+    }
 
-  <div class="glow glow2"></div>
+    .f6 {
+      left: 46%;
+      top: 14%;
+      --speed: 6s;
+      --delay: 2.5s;
+      font-size: 55px;
+    }
 
+    .f7 {
+      left: 56%;
+      top: 3%;
+      --speed: 4.5s;
+      --delay: .7s;
+      font-size: 40px;
+    }
 
-  <!-- FLOATING FLOWERS -->
+    .f8 {
+      left: 66%;
+      top: 18%;
+      --speed: 5s;
+      --delay: 1.8s;
+      font-size: 60px;
+    }
 
-  <div class="flower flower1">
-    🌸
-  </div>
+    .f9 {
+      left: 76%;
+      top: 7%;
+      --speed: 4s;
+      --delay: 2.2s;
+      font-size: 40px;
+    }
 
-  <div class="flower flower2">
-    🌷
-  </div>
-
-  <div class="flower flower3">
-    🌸
-  </div>
-
-  <div class="flower flower4">
-    🤍
-  </div>
-
-  <div class="flower flower5">
-    🌷
-  </div>
-
-  <div class="flower flower6">
-    🌸
-  </div>
-
-
-  <!-- FALLING PETALS -->
-
-  <div class="petal petal1">
-    🌸
-  </div>
-
-  <div class="petal petal2">
-    🤍
-  </div>
-
-  <div class="petal petal3">
-    🌷
-  </div>
-
-  <div class="petal petal4">
-    🌸
-  </div>
-
-  <div class="petal petal5">
-    🤍
-  </div>
-
-  <div class="petal petal6">
-    🌷
-  </div>
-
-  <div class="petal petal7">
-    🌸
-  </div>
-
-
-  <!-- CENTER MESSAGE -->
-
-  <div class="message">
-
-    <h1>
-      For You, Ericka 🌸
-    </h1>
-
-    <p class="subtitle">
-      A little garden made just for you. 🤍
-    </p>
-
-    <span class="heart">
-      ♡
-    </span>
-
-  </div>
+    .f10 {
+      left: 87%;
+      top: 20%;
+      --speed: 5.5s;
+      --delay: .3s;
+      font-size: 55px;
+    }
 
 
-</body>
+    .f11 {
+      left: 1%;
+      top: 33%;
+      --speed: 5s;
+      --delay: 1s;
+      font-size: 50px;
+    }
 
-</html>
+    .f12 {
+      left: 11%;
+      top: 40%;
+      --speed: 4.5s;
+      --delay: 2s;
+      font-size: 35px;
+    }
+
+    .f13 {
+      left: 20%;
+      top: 29%;
+      --speed: 6s;
+      --delay: .5s;
+      font-size: 52px;
+    }
+
+    .f14 {
+      left: 30%;
+      top: 44%;
+      --speed: 4s;
+      --delay: 1.5s;
+      font-size: 42px;
+    }
+
+    .f15 {
+      left: 40%;
+      top: 30%;
+      --speed: 5.5s;
+      --delay: 2s;
+      font-size: 35px;
+    }
+
+    .f16 {
+      left: 51%;
+      top: 43%;
+      --speed: 4.5s;
+      --delay: .8s;
+      font-size: 48px;
+    }
+
+    .f17 {
+      left: 61%;
+      top: 29%;
+      --speed: 5s;
+      --delay: 1.8s;
+      font-size: 38px;
+    }
+
+    .f18 {
+      left: 71%;
+      top: 43%;
+      --speed: 6s;
+      --delay: .4s;
+      font-size: 55px;
+    }
+
+    .f19 {
+      left: 81%;
+      top: 32%;
+      --speed: 4s;
+      --delay: 2.5s;
+      font-size: 42px;
+    }
+
+    .f20 {
+      left: 92%;
+      top: 42%;
+      --speed: 5s;
+      --delay: 1s;
+      font-size: 50px;
+    }
+
+
+    .f21 {
+      left: 5%;
+      top: 58%;
+      --speed: 5.5s;
+      --delay: .5s;
+      font-size: 55px;
+    }
+
+    .f22 {
+      left: 15%;
+      top: 68%;
+      --speed: 4s;
+      --delay: 1.5s;
+      font-size: 38px;
+    }
+
+    .f23 {
+      left: 25%;
+      top: 56%;
+      --speed: 6s;
+      --delay: 2s;
+      font-size: 50px;
+    }
+
+    .f24 {
+      left: 35%;
+      top: 70%;
+      --speed: 4.5s;
+      --delay: .3s;
+      font-size: 42px;
+    }
+
+    .f25 {
+      left: 45%;
+      top: 58%;
+      --speed: 5s;
+      --delay: 1.8s;
+      font-size: 55px;
+    }
+
+    .f26 {
+      left: 56%;
+      top: 72%;
+      --speed: 4s;
+      --delay: 2.3s;
+      font-size: 38px;
+    }
+
+    .f27 {
+      left: 66%;
+      top: 56%;
+      --speed: 5.5s;
+      --delay: .7s;
+      font-size: 52px;
+    }
+
+    .f28 {
+      left: 76%;
+      top: 70%;
+      --speed: 4.5s;
+      --delay: 1.2s;
+      font-size: 42px;
+    }
+
+    .f29 {
+      left: 87%;
+      top: 57%;
+      --speed: 6s;
+      --delay: 2s;
+      font-size: 55px;
+    }
+
+    .f30 {
+      left: 95%;
+      top: 72%;
+      --speed: 4s;
+      --delay: .5s;
+      font-size: 38px;
+    }
+
+
+    /* =====================================
+       BOTTOM FLOWERS
+    ===================================== */
+
+    .f31 {
+      left: 1%;
+      bottom: 3%;
+      --speed: 5s;
+      --delay: 1s;
+      font-size: 65px;
+    }
+
+    .f32 {
+      left: 12%;
+      bottom: 1%;
+      --speed: 4s;
+      --delay: 2s;
